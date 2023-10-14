@@ -15,13 +15,17 @@ body {
 ul { list-style: none; }
 
 #header-wrap {
-    position: flex;  
+    /* position: flex;   */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    transition: top 0.5s;
+    z-index: 30;
 }
 
 #header-wrap #header {
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,7 +33,6 @@ ul { list-style: none; }
     width: 100%;
     height: 80px;
     border-bottom: 1px solid #ededed;
-    background-color: #fff;
 }
 
 #header-wrap #header #logo{
@@ -219,7 +222,6 @@ ul { list-style: none; }
 
 #footer {
     width: 100%;
-    height: 1000px;
     padding: 110px 0;
     background-color: #051829;
     color: #fff;
@@ -231,8 +233,6 @@ ul { list-style: none; }
     margin: 0 auto;
     overflow: hidden;
 }
-
-
 
 #footer .inner .main h2{
     font-size: 74px;
@@ -263,8 +263,9 @@ ul { list-style: none; }
     width: 373px;
     padding-bottom: 32px;
     border-bottom: 1px solid #fff ;
-
+    opacity: 0.8;
     font-size: 26px;
+    line-height: 1.6;
     font-weight: var(--font-weight-bold);
 }
 
@@ -277,7 +278,29 @@ ul { list-style: none; }
 #footer .info-con .info1 h2 {
     font-size: 18px;
     font-weight: var(--font-weight-bold);
+}
 
+#footer .info-con .info1 p {
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+#footer .info-con .info1 .com-ad {
+    margin: 30px 0 20px;
+}
+
+#footer .info-con .info2 {
+    margin-right: 216px;
+}
+
+#footer .info-con .info2 p {
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0.72;
+}
+
+#footer .info-con .info2 p:first-child {
+    margin-bottom: 22px;
 }
 
 /* about */
