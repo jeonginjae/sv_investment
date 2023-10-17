@@ -11,6 +11,7 @@ body {
     --font-weight-regular: 400 ;
     --font-weight-bold: 700;
     --font-weight-big: 900;
+    --content-width:1160px;
 }
 
 ul, li { list-style: none; }
@@ -76,7 +77,7 @@ ul, li { list-style: none; }
 }
 
 #container section:first-child #main-banner  {
-    width: 1160px;
+    width: var(--content-width);
     height: 980px;
     margin: 0 auto;
     position: relative;
@@ -107,30 +108,29 @@ ul, li { list-style: none; }
     right: 100px;
     width: 890px;
     height: 390px;
-
-    /* margin-top: 134px;
-    margin-left: 356px; */
+     margin-top: 134px;
+    /* margin-left: 356px; */ 
 }
 
 #container section:first-child #main-banner .inner .main img {
-    padding-top: 32px;
+    padding-top: 30px;
+    padding-left: 100px;
     position: relative;
     display: flex;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    
 }
 
 #container section:first-child #main-banner .button {
     position: absolute;
-    right: calc((100vw / 1920) * 60);
-    bottom: calc((100vw / 1920) * 60);
+    right:0;
+    bottom: 130px;
 }
 
 #container section:first-child #main-banner .button img {
     width: 100px;
     height: 100px;
-
 }
 
 /* section2 */
@@ -143,7 +143,7 @@ ul, li { list-style: none; }
 }
 
 #container section:nth-child(2) .inner {
-    width: 1160px;
+    width: var(--content-width);
     height: 1020px;
     margin: 0 auto;
     box-sizing: border-box;
@@ -189,7 +189,7 @@ ul, li { list-style: none; }
 }
 
 #container section:nth-child(2) .inner .counting .number:first-child {
-    margin-left: 394px;
+    margin-left: 374px;
 }
 
 #container section:nth-child(2) .inner .counting .number p {
@@ -201,6 +201,10 @@ ul, li { list-style: none; }
 #container section:nth-child(2) .inner .counting .number .counter {
     display: flex;
     align-items: flex-end;
+}
+
+#container section:nth-child(2) .inner .counting .number:nth-child(1), #container section:nth-child(2) .inner .counting .number:nth-child(3) {
+    margin-right: 20px;
 }
 
 #container section:nth-child(2) .inner .counting .number .counter h2{
@@ -230,7 +234,7 @@ ul, li { list-style: none; }
 }
 
 #footer .inner {
-    width: 1160px;
+    width: var(--content-width);
     margin: 0 auto;
     overflow: hidden;
 }
@@ -239,6 +243,7 @@ ul, li { list-style: none; }
     font-size: 74px;
     color: white;
     font-weight: var(--font-weight-big);
+    margin-bottom: 30px;
 }
 
 #footer .inner .menu {
@@ -248,16 +253,17 @@ ul, li { list-style: none; }
     margin-bottom: 112px;
 }
 
-#footer .inner .menu p {
+#footer .inner .menu h2 {
     font-size: 22px;
     font-weight: var(--font-weight-regular);
+    opacity: 0.8;
 }
 
 #footer .menu ul li {
     margin-bottom: 32px;
 }
 
-#footer .menu ul li p{
+#footer .menu > ul li p{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -267,7 +273,7 @@ ul, li { list-style: none; }
     opacity: 0.8;
     font-size: 26px;
     line-height: 1.6;
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-big);
 }
 
 #footer .info-con {
@@ -284,6 +290,10 @@ ul, li { list-style: none; }
 #footer .info-con .info1 p {
     margin-bottom: 10px;
     opacity: 0.8;
+}
+
+#footer .info-con .info1 p.copyright {
+    margin-top: 80px;
 }
 
 #footer .info-con .info1 .com-ad {
@@ -313,7 +323,7 @@ ul, li { list-style: none; }
 #about-container section .main {
     padding: 0 0;
     position: relative;
-    width: 1160px;
+    width: var(--content-width);
     margin: 0 auto;
 }
 
@@ -439,7 +449,7 @@ ul, li { list-style: none; }
 #about-container section .second .inner {
     padding: 0;
     position: relative;
-    width: 1160px;
+    width: var(--content-width);
     margin: 0 auto;
 }
 
@@ -520,7 +530,7 @@ ul, li { list-style: none; }
 #about-container section .third .inner {
     padding: 0;
     position: relative;
-    width: 1160px;
+    width: var(--content-width);
     margin: 0 auto;
 }
 
@@ -550,6 +560,10 @@ ul, li { list-style: none; }
     font-size: 74px;
     font-weight: var(--font-weight-big);
     margin-bottom: 38px;
+}
+
+#about-container section .third .inner .strategies .tit h2 span {
+    color: #ee8100;
 }
 
 #about-container section .third .inner .strategies .tit p {
@@ -592,9 +606,10 @@ ul, li { list-style: none; }
     color: #566876;
 }
 
-#about-container section .third .inner .sub .left .tab:hover > h2 {
+#about-container section .third .inner .sub .left .tab.active > h2 {
     color: #ee8100;
 }
+
 
 /* #about-container section .third .inner  .sub .left .tab:hover > p:nth-child(1) {
     display: none;
@@ -618,4 +633,59 @@ ul, li { list-style: none; }
     font-size: 15px;
     font-weight: var(--font-weight-regular);
     line-height: 1;
+}
+
+
+#about-container section .fourth {
+    padding-top: 240px;
+    padding-bottom: 240px;
+    background-color: #f3f5f7;
+}
+
+#about-container section .fourth .inner {
+    padding: 0 0;
+    margin: 0 auto;
+    position: relative;
+    width: var(--content-width);
+}
+
+#about-container section .fourth .inner .unicorn {
+    padding-top: 0;
+}
+
+#about-container section .fourth .inner .unicorn .u-right {
+    position: relative;
+    padding: 87px 0 0 103px;
+    margin-left: 560px;
+    margin-bottom: 100px;
+}
+
+#about-container section .fourth .inner .unicorn .u-right:after{
+    position: absolute;
+    content: "";
+    background-image: url(../img/orange-cre.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 130px;
+    height: 130px;
+    left: 0;
+    top: 0;
+
+}
+
+
+#about-container section .fourth .inner .unicorn .u-right h2 {
+    font-size: 74px;
+    font-weight: var(--font-weight-big);
+    margin-bottom: 38px;
+}
+
+#about-container section .fourth .inner .unicorn .u-right h2 span {
+    color: #ee8100;
+}
+
+#about-container section .fourth .inner .unicorn .u-left p {
+    font-size: 22px;
+    font-weight: var(--font-weight-regular);
+    line-height: 1.6;
 }
