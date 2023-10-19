@@ -314,7 +314,7 @@ ul, li { list-style: none; }
     margin-bottom: 22px;
 }
 
-/* about-section main*/
+/* about페이지 메인*/
 
 #about-container {
     margin-top: 145px;
@@ -438,7 +438,7 @@ ul, li { list-style: none; }
     margin-top: 40px;
 }
 
-/* about-section second */
+/* about페이지 second */
 
 #about-container section .second {
     padding-top: 240px;
@@ -520,7 +520,7 @@ ul, li { list-style: none; }
     margin-top: 78px;
 }
 
-/* about-section third */
+/* about페이지 third */
 
 #about-container section .third {
     margin-top: 240px;
@@ -593,7 +593,7 @@ ul, li { list-style: none; }
 
 }
 
-#about-container section .third .inner .sub .left .tab img {
+#about-container section .third .inner .sub .left .tab .icon {
     margin-right: 24px;
     width: 40px;
     height: 40px;
@@ -610,31 +610,56 @@ ul, li { list-style: none; }
     color: #ee8100;
 }
 
-
-/* #about-container section .third .inner  .sub .left .tab:hover > p:nth-child(1) {
-    display: none;
+#about-container section .third .inner .sub .left .tab.one .icon {
+    background: url(../img/innovation.png) no-repeat center center;
 }
 
-#about-container section .third .inner  .sub .left .tab:hover > p:nth-child(2) {
-    display: none;
+#about-container section .third .inner .sub .left .tab.two .icon {
+    background: url(../img/leading.png) no-repeat center center;
 }
 
-#about-container section .third .inner  .sub .left .tab:hover > p:nth-child(3) {
-    display: none;
-} */
+#about-container section .third .inner .sub .left .tab.three .icon {
+    background: url(../img/crossborder.png) no-repeat center center;
+}
 
-#about-container section .third .inner .sub .left .tab .right {
-    width: 550px;
-    margin-left: 200px;
+#about-container section .third .inner .sub .left .tab.one.active .icon {
+    background: url(../img/innovation-on.png) no-repeat center center;
+}
+
+#about-container section .third .inner .sub .left .tab.two.active .icon {
+    background: url(../img/leading-on.png) no-repeat center center;
+}
+
+#about-container section .third .inner .sub .left .tab.three.active .icon {
+    background: url(../img/crossborder-on.png) no-repeat center center;
+}
+
+#about-container section .third .inner .sub .right .box {
+    position: relative;
+    padding: 11px 0 0 14px;
 }
 
 
-#about-container section .third .inner .sub .left .tab .right p {
+#about-container section .third .inner .sub .right .box p {
     font-size: 15px;
     font-weight: var(--font-weight-regular);
-    line-height: 1;
+    line-height: 1.6;
+    width: 500px;
 }
 
+#about-container section .third .inner .sub .right .box:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    background-image: url(../img/txt-icon.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 20px;
+    height: 20px;
+}
+
+/* about페이지 fourth */
 
 #about-container section .fourth {
     padding-top: 240px;
@@ -673,7 +698,6 @@ ul, li { list-style: none; }
 
 }
 
-
 #about-container section .fourth .inner .unicorn .u-right h2 {
     font-size: 74px;
     font-weight: var(--font-weight-big);
@@ -688,4 +712,79 @@ ul, li { list-style: none; }
     font-size: 22px;
     font-weight: var(--font-weight-regular);
     line-height: 1.6;
+}
+
+/* people페이지 */
+#about-container section .main .content {
+    margin-top: 118px;
+    width: var(--content-width);
+    height: 472px;
+}
+
+#about-container section .main .content .tab-container {
+    width: var(--content-width);
+    height: 472px;
+}
+
+#about-container section .main .content .tab-container .tab-leader ul {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 832px;
+    padding-top: 15px;
+}
+
+#about-container section .main .content .tab-container .tab-leader ul li {
+    margin-right: 30px;    
+}
+
+#about-container section .main .content .tab-container .tab-leader ul li a {
+    font-size: 20px;
+    font-weight: var(--font-weight-regular);
+    color: #191919;
+    margin-bottom: 30px;
+    display: block;
+    text-decoration-line: none;
+}
+
+#about-container section .main .content .tab-container .tab-leader ul li:first-child a {
+    color: #ee8100;
+    text-decoration: underline;
+    text-underline-offset: 0.5em;
+}
+
+#about-container section .main .content .tab-container .tab-photo {
+    margin-top: 30px;
+    position: relative;
+    display: block;
+}
+
+#about-container section .main .content .tab-container .tab-photo .tab-photo1 .photoceo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+#about-container section .main .content .tab-container .tab-photo .tab-photo1 .photoceo .photobox .photo {
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #ebebeb;
+}
+
+#about-container section .main .content .tab-container .tab-photo .tab-photo1 .photoceo .photobox .photo img {
+    transition: all .5s ease;
+    filter: grayscale(100%);
+}
+
+
+#about-container section .main .content .tab-container .tab-photo .tab-photo1 .photoceo .photobox .name h2 {
+    font-size: 28px;
+    font-weight: var(--font-weight-bold);
+}
+
+#about-container section .main .content .tab-container .tab-photo .tab-photo1 .photoceo .photobox .name p {
+    font-size: 16px;
+    font-weight: var(--font-weight-regular);
+    color: #777;
+    margin-top: 8px;
 }
