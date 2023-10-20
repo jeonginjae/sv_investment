@@ -320,6 +320,24 @@ ul, li { list-style: none; }
     margin-top: 145px;
 }
 
+#about-container .aside-about {
+    position: fixed;
+    left: 56px;
+    top: 170px;
+}
+
+#about-container .aside-about li:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+#about-container .aside-about li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+    font-weight: var(--font-weight-regular);
+    line-height: 1.6;
+}
+
 #about-container section .main {
     padding: 0 0;
     position: relative;
