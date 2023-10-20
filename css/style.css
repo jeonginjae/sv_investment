@@ -630,26 +630,32 @@ ul, li { list-style: none; }
 
 #about-container section .third .inner .sub .left .tab.one .icon {
     background: url(../img/innovation.png) no-repeat center center;
+    background-size: cover;
 }
 
 #about-container section .third .inner .sub .left .tab.two .icon {
     background: url(../img/leading.png) no-repeat center center;
+    background-size: cover;
 }
 
 #about-container section .third .inner .sub .left .tab.three .icon {
     background: url(../img/crossborder.png) no-repeat center center;
+    background-size: cover;
 }
 
 #about-container section .third .inner .sub .left .tab.one.active .icon {
     background: url(../img/innovation-on.png) no-repeat center center;
+    background-size: cover;
 }
 
 #about-container section .third .inner .sub .left .tab.two.active .icon {
     background: url(../img/leading-on.png) no-repeat center center;
+    background-size: cover;
 }
 
 #about-container section .third .inner .sub .left .tab.three.active .icon {
     background: url(../img/crossborder-on.png) no-repeat center center;
+    background-size: cover;
 }
 
 #about-container section .third .inner .sub .right .box {
@@ -805,4 +811,39 @@ ul, li { list-style: none; }
     font-weight: var(--font-weight-regular);
     color: #777;
     margin-top: 8px;
+}
+
+
+/* portfolio page */
+
+#about-container section .main .content .tab-container .tab-leader {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#about-container section .main .content .tab-container .tab-leader .search_box .search {
+    position: relative;
+    background-color: #ebebeb;
+    width: 226px;
+    height: 48px;
+    border: none;
+    font-size: 16px;
+    line-height: 41px;
+    font-weight: var(--font-weight-regular);
+    padding: 0 42px 0 15px;
+}
+
+#about-container section .main .content .tab-container .tab-leader .search_box #btn_search {
+    display: block;
+    position: absolute;
+    background-image: url(../img/search.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    border: none;
+    width: 24px;
+    height: 24px;
+    right: 15px;
+    top: 290px;
 }
