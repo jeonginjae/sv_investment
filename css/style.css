@@ -60,6 +60,8 @@ ul, li { list-style: none; }
 }
 
 #header-wrap #header .inner ul li a {
+    position: relative;
+    display: inline-block;
     margin-left: 102px;
     color: black;
     text-decoration: none;
@@ -72,28 +74,35 @@ ul, li { list-style: none; }
     color: #ee8100;
 }
 
+#header-wrap #header .inner ul li a:hover:before {
+    opacity: 1;
+    transform: translate(0%, 0%);
+}
+
 #header-wrap #header .inner ul li a:before {
+    content: "";
     position: absolute;
     width: 9px;
     height: 9px;
-    content: "";
-    left: 0;
-    top: 0;
-    border-top: #ee8100;
-    border-left: #ee8100;
+    left: -12px;
+    top: 5px;
+    border-style: solid;
+    border-width: 3px ;
+    border-right: #ee8100;
+    border-bottom: #ee8100;
     opacity: 0;
     transition: .3s ease;
-    transform: translate(0%, 0%);
+    transform: translate(50%, 50%);
 }
 
 #header-wrap #header .earth {
     position: absolute;
-    top: 50%;
+    top: 60%;
     right: 56px;
     width: 25px;
+    height: 25px;
     overflow: hidden;
     display: flex;
-    flex-wrap: nowrap;
     align-items: center;
     z-index: 99;
     transform: translateY(-50%);
@@ -108,6 +117,16 @@ ul, li { list-style: none; }
     width: 180px;
 }
 
+#header-wrap #header .earth ul {
+    position: absolute;
+    overflow: hidden;
+    width: 200px;
+}
+
+#header-wrap #header .earth ul li {
+    float: left;
+}
+
 #header-wrap #header .earth li:first-child {
     width: 30px;
     height: 24px;
@@ -119,7 +138,6 @@ ul, li { list-style: none; }
     flex-wrap: nowrap;
     align-items: center;
     top: 50%;
-    width: 0;
     margin-right: -16px;
 }
 
@@ -706,38 +724,63 @@ ul, li { list-style: none; }
 }
 
 #about-container section .third .inner .sub .left .tab.one .icon {
-    background: url(../img/innovation.png) no-repeat center center;
+    background: url(../img/innovation.png) ;
+    background-repeat: no-repeat 
+    background-position: center center;
     background-size: cover;
 }
 
 #about-container section .third .inner .sub .left .tab.two .icon {
-    background: url(../img/leading.png) no-repeat center center;
+    background: url(../img/leading.png) ;
+    background-repeat: no-repeat ; 
+    background-position: center center;
     background-size: cover;
 }
 
 #about-container section .third .inner .sub .left .tab.three .icon {
-    background: url(../img/crossborder.png) no-repeat center center;
+    background: url(../img/crossborder.png); 
+    background-repeat: no-repeat; 
+    background-position: center center;
     background-size: cover;
 }
 
 #about-container section .third .inner .sub .left .tab.one.active .icon {
-    background: url(../img/innovation-on.png) no-repeat center center;
+    background: url(../img/innovation-on.png);
+    background-repeat: no-repeat ;
+    background-position: center center;
     background-size: cover;
 }
 
 #about-container section .third .inner .sub .left .tab.two.active .icon {
-    background: url(../img/leading-on.png) no-repeat center center;
+    background: url(../img/leading-on.png); 
+    background-repeat: no-repeat ;
+    background-position: center center;
     background-size: cover;
 }
 
 #about-container section .third .inner .sub .left .tab.three.active .icon {
-    background: url(../img/crossborder-on.png) no-repeat center center;
+    background: url(../img/crossborder-on.png); 
+    background-repeat: no-repeat ;
+    background-position: center center;
     background-size: cover;
 }
 
 #about-container section .third .inner .sub .right .box {
     position: relative;
     padding: 11px 0 0 14px;
+    display: none;
+}
+
+#about-container section .third .inner .sub .right .box:first-child {
+    display: block;
+}
+
+#about-container section .third .inner .sub .right .box.two {
+    top: 120px;
+}
+
+#about-container section .third .inner .sub .right .box.three {
+    top: 240px;
 }
 
 
@@ -1047,7 +1090,96 @@ ul, li { list-style: none; }
     color: #000000;
 }
 
-/* NEWS PAGE */
+/* Global page */
+
+#about-container section#glo-info .main {
+    padding-bottom: 120px;
+    position: relative;
+    width: var(--content-width);
+    margin: 0 auto;
+}
+
+#about-container section#glo-info .main .inner1:after {
+    position: absolute;
+    content: '';
+    margin-left: -30px;
+    top: 0;
+    background-image: url(../img/orange.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 38px;
+    height: 38px;
+}
+
+#about-container section#glo-info .main .inner1 {
+    position: relative;
+    padding: 20px 0 0 0;
+}
+
+#about-container section#glo-info .main .inner1 h2 {
+    font-size: 88px ;
+    font-weight: var(--font-weight-big) ;
+    margin-bottom: 20px ;
+}
+
+#about-container section#gloinfo .main .inner1 p {
+    font-size: 32px ;
+    font-weight: var(--font-weight-regular);
+}
+
+#about-container section .glo-info {
+    background-color: #f3f5f7;
+    padding: 0 0 240px;
+}
+
+#about-container section .glo-info .main {
+    padding-top: 120px;
+}
+
+#about-container section .glo-info .main .inner2 {
+    margin-bottom: 140px;
+}
+
+#about-container section .glo-info .main .inner2 h3 {
+    font-size: 64px;
+    font-weight: var(--font-weight-big);
+    margin-bottom: 30px;
+}
+
+#about-container section .glo-info .main .inner2 p {
+    font-size: 18px;
+    font-weight: var(--font-weight-bold);
+    line-height: 1.6;
+}
+
+#about-container section .glo-info .main .map-con .map{
+    margin-bottom: 100px;
+}
+
+#about-container section .glo-info .main .map-con .con1 {
+    margin-bottom: 100px;
+}
+
+#about-container section .glo-info .main .map-con .con1 h2 {
+    font-size: 24px;
+    font-weight: var(--font-weight-bold);
+}
+
+#about-container section .glo-info .main .map-con .con1 p {
+    font-size: 18px;
+    font-weight: var(--font-weight-regular);
+    color: #566876;
+    line-height: 1.6;
+    margin-top: 16px;
+}
+
+#about-container section .glo-info .main .map-con .con2 {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+/* News page */
 
 #about-container section .main .content1 .tab-container .news-list {
     display: flex;

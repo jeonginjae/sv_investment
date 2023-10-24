@@ -33,10 +33,12 @@ $(function () {
     });
 
     // 클릭할 때 나머지 사라짐
-    $('.tab').click(function(){        
-        $('.right').css('display','none');
-        $('.right').eq($(this).index()).css('display','block');
+    $('.tab').click(function(){ 
+        $('.tab').removeClass('active'); 
+        $(this).addClass('active');    
+        $('.right .box').css('display','none');
+        $('.right .box').eq($(this).index()).css('display','block');
+        
     });
     
-
 });
