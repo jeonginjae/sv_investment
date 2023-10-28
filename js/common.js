@@ -10,9 +10,11 @@ $(function () {
         return false;
     });
     
+    console.log('abc');
 
     /*클릭한 버튼 색상 번경*/ 
     $(window).scroll(function() {
+        console.log('scroll');
         var wHeight = $(this).height();
         var scTop = $(this).scrollTop();
         var starPoint = 150;
@@ -37,8 +39,7 @@ $(function () {
         $('.tab').removeClass('active'); 
         $(this).addClass('active');    
         $('.right .box').css('display','none');
-        $('.right .box').eq($(this).index()).css('display','block');
-        
+        $('.right .box').eq($(this).index()).css('display','block');        
     });
     
 });

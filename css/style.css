@@ -144,6 +144,8 @@ ul, li { list-style: none; }
 #header-wrap #header .earth li a {
     text-decoration: none;
     color: #969696;
+    font-size: 16px;
+    line-height: 1.2;
 }
 
 #header-wrap #header .earth li a:first-child {
@@ -178,12 +180,26 @@ ul, li { list-style: none; }
     position: relative;
 }
 
-#container section:first-child #main-banner .inner .text img {
-    height: 88px;
-    margin-bottom: 50px
+#container section:first-child #main-banner .inner .text {
+    opacity: 0;
+    transform: translateY(50%);
 }
 
-#container section:first-child #main-banner .inner .text h2{
+#container section:first-child.active #main-banner .inner .text {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1s;
+}
+
+#container section:first-child #main-banner .inner .text h2 {
+    font-size: 80px;
+    font-weight: var(--font-weight-big);
+    height: 88px;
+    margin-bottom: 40px;
+}
+
+
+#container section:first-child #main-banner .inner .text p{
     font-size: 22px;
     font-weight: var(--font-weight-regular);
     line-height: 1.6;
@@ -195,8 +211,16 @@ ul, li { list-style: none; }
     right: 100px;
     width: 890px;
     height: 390px;
-     margin-top: 134px;
-    /* margin-left: 356px; */ 
+    margin-top: 134px;
+    opacity: 0;
+    transform: translate(-30%, 20%);
+    
+}
+
+#container section:first-child.active #main-banner .inner .main {
+    opacity: 1;
+    transform: scale(0.9) translate(0, 0);
+    transition: 1.5s;
 }
 
 #container section:first-child #main-banner .inner .main img {
@@ -211,13 +235,13 @@ ul, li { list-style: none; }
 
 #container section:first-child #main-banner .button {
     position: absolute;
-    right:0;
+    right: -310px;
     bottom: 130px;
 }
 
 #container section:first-child #main-banner .button img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
 }
 
 /* section2 */
@@ -242,14 +266,35 @@ ul, li { list-style: none; }
     margin-left: -30px;
 }
 
-#container section:nth-child(2) .inner .box img {
-    width: 799px;
+#container section:nth-child(2) .inner .box h2 {
+    font-size: 70px;
+    color: #051829;
+    font-weight: var(--font-weight-big);
+}
+
+#container section:nth-child(2) .inner .box h2 span {
+    font-size: 70px;
+    color: #ee8100;
+    font-weight: var(--font-weight-big);
+}
+
+#container section:nth-child(2) .inner .box h2:before {
+    position: absolute;
+    content: "";
+    background-image: url(../img/orange.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 38px;
+    height: 38px;
+    top: 0;
+    left: 0;
 }
 
 #container section:nth-child(2) .inner .box p {
     font-size: 22px;
     line-height: 1.6;
     font-weight: var(--font-weight-regular);
+    margin-top: 40px;
 }
 
 #container section:nth-child(2) .inner .box span {
@@ -484,6 +529,7 @@ ul, li { list-style: none; }
 }
 
 
+
 #about-container section .ceo-info .main .inner2 p {
     font-size: 18px;
     font-weight: var(--font-weight-bold);
@@ -508,7 +554,16 @@ ul, li { list-style: none; }
     position: absolute;
     bottom: 0;
     left: -100px;
+    opacity: 0;
+    transform: translateX(-30%);
 }
+
+#about-container section.active .ceo-info .ceo-say .box .box-img { 
+    transform: translateX(0);
+    opacity: 1;
+    transition: 1s;
+}
+
 
 #about-container section .ceo-info .ceo-say .box .box-img img {
     vertical-align: middle;
@@ -522,6 +577,14 @@ ul, li { list-style: none; }
     font-weight: var(--font-weight-bold);
     line-height: 1.6;
     width: max-content;
+    opacity: 0;
+    transform: translateY(30%);
+}
+
+#about-container section.active .ceo-info .ceo-say .box h3 {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1s;
 }
 
 #about-container section .ceo-info .ceo-say .box h3:after {
@@ -588,17 +651,23 @@ ul, li { list-style: none; }
 
 #about-container section .second .inner .vm {
     padding: 222px 299px 217px 336px;
-    margin-left: 100px;
+    margin-left: 140px;
     position: relative;
     width: max-content;
 }
 
-#about-container section .second .inner .vm .icon-left {
+#about-container section.active .second .inner .vm .icon-left, #about-container section.active .second .inner .vm .icon-right{
     margin: 60px;
+    transition: 1s;
+}
+
+#about-container section .second .inner .vm .icon-left {    
     position: absolute;
     content: "";
     left: -60px;
     top: -60px;
+    width: 297px;
+    height: 297px;
 }
 
 #about-container section .second .inner .vm .icon-right {
@@ -606,11 +675,13 @@ ul, li { list-style: none; }
     content: "";
     right: -60px;
     bottom: -60px;
+    width: 297px;
+    height: 297px;
 }
 
 #about-container section .second .inner .vm .icon-left img, #about-container section .second .inner .vm .icon-right img {
     vertical-align: middle;
-    width: max-content;
+    max-width: 100%;
 }
 
 #about-container section .second .inner .vm .creator-txt {
@@ -703,7 +774,7 @@ ul, li { list-style: none; }
 #about-container section .third .inner .sub .left .tab {
     display: flex;
     align-items: center;
-
+    cursor: pointer;
 }
 
 #about-container section .third .inner .sub .left .tab .icon {
@@ -1033,10 +1104,10 @@ ul, li { list-style: none; }
     position: absolute;
     top: 20px;
     left: 20px;
+    z-index: 10;
 }
 
 #about-container section .main .content1 .tab-container .box-list .tab-box .portfolio-box .ipo img {
-    filter: grayscale(0);
     opacity: 1;
     width: 100%;
 }
@@ -1160,6 +1231,84 @@ ul, li { list-style: none; }
     margin-bottom: 100px;
 }
 
+#about-container section .glo-info .main .map-con .map .dot {
+    position: absolute;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    opacity: 0;
+}
+
+#about-container section.active .glo-info .main .map-con .map .dot {
+    opacity: 1;
+    transition: .5s;
+    transition-timing-function: ease-in-out;
+}
+
+#about-container section .glo-info .main .map-con .map .dot.kor {
+    right: 110px;
+    top: 660px;    
+}
+
+#about-container section.active .glo-info .main .map-con .map .dot.kor {
+    transition-delay: .2s;
+}
+
+#about-container section .glo-info .main .map-con .map .dot.san {
+    right: 130px;
+    top: 685px;
+}
+
+#about-container section.active .glo-info .main .map-con .map .dot.san {
+    transition-delay: .4s;
+}
+
+#about-container section .glo-info .main .map-con .map .dot.shen {
+    right: 160px;
+    top: 730px;
+}
+
+#about-container section.active .glo-info .main .map-con .map .dot.shen {
+    transition-delay: .6s;
+}
+
+#about-container section .glo-info .main .map-con .map .dot.sin {
+    right: 250px;
+    top: 790px;
+}
+
+#about-container section.active .glo-info .main .map-con .map .dot.sin {
+    transition-delay: .8s;
+}
+
+#about-container section .glo-info .main .map-con .map .dot.bos {
+    left: 380px;
+    top: 700px;
+}
+
+#about-container section.active .glo-info .main .map-con .map .dot.bos {
+    transition-delay: 1s;
+}
+
+#about-container section .glo-info .main .map-con .map .dot.sil {
+    left: 140px;
+    top: 680px;
+}
+
+#about-container section.active .glo-info .main .map-con .map .dot.sil {
+    transition-delay: 1.2s;
+}
+
+#about-container section .glo-info .main .map-con .map .dot p{
+    margin-left: 10px;
+    color: #ee8100;
+    font-weight: var(--font-weight-big);
+}
+
+#about-container section .glo-info .main .map-con .map .dot.sin p{
+    margin-right: 10px;
+}
+
 #about-container section .glo-info .main .map-con .con1 {
     margin-bottom: 100px;
 }
@@ -1279,7 +1428,6 @@ ul, li { list-style: none; }
 }
 
 #about-container section .network .inner .net-con .boxes .txt .adress a {
-
     text-decoration: none;
     font-size: 18px;
     font-weight: var(--font-weight-regular);
@@ -1287,7 +1435,21 @@ ul, li { list-style: none; }
     color: #565656;
 }
 
+#about-container section .network .inner .net-con .boxes .txt .adress a:after {
+    position: absolute;
+    content: "";
+    background-image: url(../img/global/href-off.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 16px;
+    height: 16px;
+}
+
 #about-container section .network .inner .net-con .boxes .map {
+    width: 373px;
+    height: 373px;
     margin-left: auto;
 }
 
@@ -1298,11 +1460,73 @@ ul, li { list-style: none; }
     box-sizing: border-box;
 }
 
+#about-container section .network .inner .net-con .boxes .map.bos {
+    background-image: url(../img/global/boston-map.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-sizing: border-box;
+}
+
+#about-container section .network .inner .net-con .boxes .map.san {
+    background-image: url(../img/global/sanghai-map.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-sizing: border-box;
+}
+
+#about-container section .network .inner .net-con .boxes .map.shen {
+    background-image: url(../img/global/shenzhen-map.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-sizing: border-box;
+}
+
+#about-container section .network .inner .net-con .boxes .map.sin {
+    background-image: url(../img/global/singapore-map.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-sizing: border-box;
+}
+
 #about-container section .network .inner .net-con .boxes .map .dot {
     position: absolute;
     display: flex;
     align-items: center;
+    
 }
+
+#about-container section .network .inner .net-con .boxes .map.kor .dot.kor {
+    padding-top: 140px;
+    padding-left: 170px;
+}
+
+#about-container section .network .inner .net-con .boxes .map.bos .dot.bos {
+    padding-top: 140px;
+    padding-left: 160px;
+}
+
+
+#about-container section .network .inner .net-con .boxes .map.san .dot.san {
+    padding-top: 180px;
+    padding-left: 180px;
+}
+
+#about-container section .network .inner .net-con .boxes .map.shen .dot.shen {
+    padding-top: 175px;
+    padding-left: 180px;
+}
+
+#about-container section .network .inner .net-con .boxes .map.sin .dot.sin {
+    padding-top: 140px;
+    padding-left: 80px;
+}
+
+#about-container section .network .inner .net-con .boxes .map .dot p {
+    color: #ee8100;
+    margin-left: 10px;
+    font-weight: var(--font-weight-big);
+}
+
 
 #about-container section .network .inner .net-con .boxes .map .dot .icon {
     width: 33px;
